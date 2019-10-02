@@ -22,6 +22,7 @@ gem 'jquery-rails'
 gem 'simple_form', '~> 4.1'
 gem 'popper_js'
 gem 'tether-rails'
+gem 'devise', '~> 4.7', '>= 4.7.1'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
