@@ -1,13 +1,20 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Navbar</a>
+<%= link_to 'Beautify+', root_path, class: 'navbar-brand' %>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav ml-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="#">Register</a>
-      </li>
+    <% if current_user %>
+        <li class="nav-item"><%= link_to 'Share latest pic', '#', class: 'nav-link' %> </li>
+        <li class="nav-link disabled'"> welcome <%= current_user.email %> !</li> 
+        <li class="nav-item"><%= link_to 'Logout', destroy_user_session_path, method: :delete,  class: 'nav-link'%></li>
+        
+        <% else %>
+      <li class="nav-item"><%= link_to 'Register',new_user_registration_path, class: 'nav-link' %> </li>
+       <li class="nav-item"><%= link_to 'Login', new_user_session_path, class: 'nav-link'%></li>
+       <% end %>
+   
   </div>
 </nav>
