@@ -1,0 +1,20 @@
+<div class="text-center col-6">
+<p>
+  <%= image_tag(@pic.image, style: 'width: 50%', class: 'img-responsive') %>
+</p>
+<div class="float-left">
+<strong>Name</strong>
+  <%= @pic.name %>
+</div>
+</br>
+<div class="float-left">
+  <strong>Description:</strong>
+  <%= @pic.description %>
+</div>
+
+<% if current_user && current_user == @pic.user %>
+<%= link_to 'Edit showcase', edit_pic_path(@pic), class: 'btn btn-sm btn-info' %> |
+<%= link_to 'Delete', @pic, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-danger' %>
+<% end %>
+<%= link_to 'Homepage', root_path , class: 'btn btn-muted'%>
+</div>

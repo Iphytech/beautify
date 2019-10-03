@@ -1,0 +1,32 @@
+
+<h1>Pics</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pics.each do |pic| %>
+      <tr>
+        <td><%= pic.name %></td>
+        <td><%= pic.description %></td>
+        <td>created by <%=  pic.user.email %></td>
+        <td><%= link_to 'Show', pic %></td>
+        <% if current_user == pic.user %>
+        <td><%= link_to 'Edit', edit_pic_path(pic) %></td>
+        <td><%= link_to 'Destroy', pic, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Pic', new_pic_path %>

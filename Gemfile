@@ -23,6 +23,7 @@ gem 'simple_form', '~> 4.1'
 gem 'popper_js'
 gem 'tether-rails'
 gem 'devise', '~> 4.7', '>= 4.7.1'
+gem 'gravtastic'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
@@ -36,7 +37,8 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use ActiveStorage variant
-# gem 'mini_magick', '~> 4.8'
+gem 'mini_magick', '~> 4.8'
+gem 'image_magick', '~> 0.1.9'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

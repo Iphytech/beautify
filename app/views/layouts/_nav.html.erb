@@ -7,9 +7,19 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav ml-auto">
     <% if current_user %>
-        <li class="nav-item"><%= link_to 'Share latest pic', '#', class: 'nav-link' %> </li>
-        <li class="nav-link disabled'"> welcome <%= current_user.email %> !</li> 
-        <li class="nav-item"><%= link_to 'Logout', destroy_user_session_path, method: :delete,  class: 'nav-link'%></li>
+        <li class="nav-item"><%= link_to 'View showcase', showcase_path  , class: 'nav-link' %> </li>
+         <li class="nav-item"><a class="nav-link"><%= image_tag current_user.gravatar_url , style: 'width: 20px'%></a> </li>
+         <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <%= current_user.username %>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <%= link_to 'Account settings',edit_user_registration_path, class: 'dropdown-item' %>
+          <div class="dropdown-divider"></div>
+          <%= link_to 'Logout', destroy_user_session_path, method: :delete,  class: 'dropdown-item'%>
+        </div>
+      </li>
+  
         
         <% else %>
       <li class="nav-item"><%= link_to 'Register',new_user_registration_path, class: 'nav-link' %> </li>
@@ -18,3 +28,5 @@
    
   </div>
 </nav>
+
+

@@ -1,0 +1,16 @@
+<div class="container">
+<h2 class="text-center"> All you have showcased</h2>
+
+<div class="card mb-3">
+ <% @showcase.each do |show| %>
+  <div class="card-img-top">
+   <%= image_tag(show.reduce_image_size ) if show.image.attached? %>
+   </div>
+  <div class="card-body">
+    <h5 class="card-title"><%= show.name %></h5>
+    <p class="card-text"><%= show.description %></p>
+    <p class="card-text"><small class="text-muted"><%= distance_of_time_in_words(show.created_at, Time.now) %> ago</small></p>
+  </div>
+  <% end %>
+</div>
+</div>
