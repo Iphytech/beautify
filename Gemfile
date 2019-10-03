@@ -24,6 +24,7 @@ gem 'popper_js'
 gem 'tether-rails'
 gem 'devise', '~> 4.7', '>= 4.7.1'
 gem 'gravtastic'
+gem 'friendly_id', '~> 5.3'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
