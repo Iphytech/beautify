@@ -1,7 +1,4 @@
-class Pic < ApplicationRecord
-  extend FriendlyId
-  friendly_id :name, use: :slugged
-  
+class Pic < ApplicationRecord  
   belongs_to :user
   has_one_attached :image
   validates_presence_of :name, :description, :image

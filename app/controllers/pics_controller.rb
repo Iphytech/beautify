@@ -65,7 +65,7 @@ class PicsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_pic
-      @pic = Pic.friendly.find(params[:id])
+      @pic = Pic.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
