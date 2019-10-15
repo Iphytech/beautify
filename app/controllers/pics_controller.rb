@@ -1,6 +1,6 @@
 class PicsController < ApplicationController
-  before_action :set_pic, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!
+  before_action :set_pic, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
+  before_action :authenticate_user!, only: [:new, :create, :upvote, :downvote]
 
   # GET /pics
   # GET /pics.json
@@ -61,6 +61,18 @@ class PicsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def upvote
+    @pic.upvote_by(current_user)
+    redirect_back(fallback_location: root_path)
+  end
+
+  def downvote
+    @pic.downvote_by(current_user)
+    redirect_back(fallback_location: root_path)
+  end
+
+ 
 
   private
     # Use callbacks to share common setup or constraints between actions.

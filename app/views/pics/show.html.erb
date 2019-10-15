@@ -11,7 +11,10 @@
   <strong>Description:</strong>
   <%= @pic.description %>
 </div>
-
+<div> 
+<%= link_to 'upvote',like_pic_path(@pic), method: :put, class: 'btn btn-success' %><span class="border rounded-circle"><%= @pic.get_upvotes.size %></span>
+<%= link_to 'Downvote',dislike_pic_path(@pic), method: :put, class: 'btn btn-danger' %><span class="border rounded-circle"><%= @pic.get_downvotes.size %></span>
+</div>
 <% if current_user && current_user == @pic.user %>
 <%= link_to 'Edit showcase', edit_pic_path(@pic), class: 'btn btn-sm btn-info' %> |
 <%= link_to 'Delete', @pic, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-danger' %>
