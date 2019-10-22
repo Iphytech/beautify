@@ -19,7 +19,7 @@ gem 'uglifier', '>= 1.3.0'
 # custom
 gem 'bootstrap', '~> 4.0'
 gem 'jquery-rails'
-gem 'simple_form', '~> 4.1'
+gem 'simple_form', '~> 5.0'
 gem 'popper_js'
 gem 'tether-rails'
 gem 'devise', '~> 4.7', '>= 4.7.1'
